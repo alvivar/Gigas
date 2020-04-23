@@ -4,52 +4,52 @@ using UnityEngine;
 
 public class Entidades : MonoBehaviour
 {
-    private static Dictionary<int, List<EntidadComponent>> entities;
+    private static Dictionary<int, List<Entidad>> entities;
 
     public static void Add(int id, Object obj)
     {
         if (entities == null)
-            entities = new Dictionary<int, List<EntidadComponent>>();
+            entities = new Dictionary<int, List<Entidad>>();
 
         if (!entities.ContainsKey(id))
-            entities[id] = new List<EntidadComponent>();
+            entities[id] = new List<Entidad>();
 
         // @todo Validate that only exists once
 
-        entities[id].Add(new EntidadComponent()
+        entities[id].Add(new Entidad()
         {
             type = obj.GetType(),
-            obj = obj
+                obj = obj
         });
     }
 
     public static void Add(int id, GameObject obj, System.Type type)
     {
         if (entities == null)
-            entities = new Dictionary<int, List<EntidadComponent>>();
+            entities = new Dictionary<int, List<Entidad>>();
 
         if (!entities.ContainsKey(id))
-            entities[id] = new List<EntidadComponent>();
+            entities[id] = new List<Entidad>();
 
         // @todo Validate that only exists once
 
         var objType = obj.AddComponent(type);
 
-        entities[id].Add(new EntidadComponent()
+        entities[id].Add(new Entidad()
         {
             type = type,
-            obj = objType
+                obj = objType
         });
     }
 
     public static void Remove(int id, Object obj)
     {
         if (entities == null)
-            entities = new Dictionary<int, List<EntidadComponent>>();
+            entities = new Dictionary<int, List<Entidad>>();
 
         if (!entities.ContainsKey(id))
         {
-            entities[id] = new List<EntidadComponent>();
+            entities[id] = new List<Entidad>();
             return;
         }
 
@@ -67,11 +67,11 @@ public class Entidades : MonoBehaviour
     public static void Remove(int id, GameObject obj, System.Type type)
     {
         if (entities == null)
-            entities = new Dictionary<int, List<EntidadComponent>>();
+            entities = new Dictionary<int, List<Entidad>>();
 
         if (!entities.ContainsKey(id))
         {
-            entities[id] = new List<EntidadComponent>();
+            entities[id] = new List<Entidad>();
             return;
         }
 
@@ -93,7 +93,7 @@ public class Entidades : MonoBehaviour
     public static T[] Get<T>()
     {
         if (entities == null)
-            entities = new Dictionary<int, List<EntidadComponent>>();
+            entities = new Dictionary<int, List<Entidad>>();
 
         var result = new List<Object>();
         foreach (var keyValue in entities)

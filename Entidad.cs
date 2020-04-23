@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public struct EntidadComponent
+public struct Entidad
 {
     public System.Type type;
     public Object obj;

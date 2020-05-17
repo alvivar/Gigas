@@ -12,4 +12,9 @@ But I really want to start thinking on Data Oriented patterns for my code and ma
 
 - I want to make it easy to port logic and algorithms to DOTS. So, I'll try my best to avoid weird stuff.
 
-- I want this library to be efficient, so, I'll continue looking deeply at the profiler and mutating the code to achieve more power, less garbage, more Unity stuff, please look at my code and tell me I can do better, send me a issue with your idea or a pull request.
+- I want this library to be efficient, so, I'll continue looking deeply at the profiler and mutating the code to achieve more power, less garbage. Please look at my code and tell me I can do better, send me a issue with your idea or a pull request.
+
+
+## Tutorial
+
+*Soon*
